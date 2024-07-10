@@ -1,0 +1,26 @@
+﻿@model IEnumerable<BackendModules.Models.Reminder>
+
+<h1>Reminders</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Date-Time</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var reminder in Model)
+        {
+            <tr>
+                <td>@reminder.Title</td>
+                <td>@reminder.DateTime</td>
+                <td>
+                    <!-- Actions like Edit and Delete can be added here -->
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<a href="@Url.Action("Create")" class="btn btn-primary">Create New Reminder</a>

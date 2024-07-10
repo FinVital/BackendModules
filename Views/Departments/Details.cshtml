@@ -1,0 +1,45 @@
+﻿@model BackendModules.Models.Department
+
+@{
+    ViewData["Title"] = "Department Details";
+}
+
+<h1>Department Details</h1>
+
+<div>
+    <h2>@Model.Name</h2>
+    <div>
+        <img src="@Model.Logo" alt="@Model.Name Logo" width="100" />
+    </div>
+    <div>
+        <h3>Parent Department</h3>
+        @if (Model.ParentDepartment != null)
+        {
+            <p>@Model.ParentDepartment.Name</p>
+        }
+        else
+        {
+            <p>This is a top-level department.</p>
+        }
+    </div>
+    <div>
+        <h3>Sub-Departments</h3>
+        @if (Model.SubDepartments.Any())
+        {
+            <ul>
+                @foreach (var sub in Model.SubDepartments)
+                {
+                    <li>@sub.Name</li>
+                }
+            </ul>
+        }
+        else
+        {
+            <p>No sub-departments available.</p>
+        }
+    </div>
+</div>
+
+<div>
+    <a href="@Url.Action("Index")" class="btn btn-primary">Back to List</a>
+</div>

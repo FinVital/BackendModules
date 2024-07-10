@@ -1,0 +1,10 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Welcome to the Backend Modules application. Use the links below to manage departments and reminders.</p>
+    <a href="@Url.Action("Departments", "Home")" class="btn btn-primary">Departments</a>
+    <a href="@Url.Action("Reminders", "Home")" class="btn btn-secondary">Reminders</a>
+</div>
